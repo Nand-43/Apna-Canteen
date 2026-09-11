@@ -1,0 +1,201 @@
+.navbar {
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 35px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #222;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.logoIcon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0e8;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+}
+
+
+.navLinks {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: 45px;
+
+    flex: 1;
+}
+
+.link,
+.active {
+    text-decoration: none;
+
+    padding: 10px 13px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.link {
+    color: #555;
+}
+
+.link:hover {
+    background: #fff3ed;
+    color: #ff7043;
+}
+
+.active {
+    background: #ff7043;
+    color: white;
+}
+
+
+.rightSection {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.profile {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+.profileIcon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0e8;
+
+    border-radius: 50%;
+
+    font-size: 16px;
+}
+
+
+.logout {
+    border: none;
+
+    background: transparent;
+
+    color: #ff7043;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 9px 12px;
+
+    border-radius: 7px;
+
+    transition: 0.2s ease;
+}
+
+.logout:hover {
+    background: #fff0e8;
+}
+
+ 
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navLinks {
+        margin-left: 20px;
+        gap: 2px;
+    }
+
+    .link,
+    .active {
+        padding: 9px 8px;
+        font-size: 13px;
+    }
+
+    .profile {
+        display: none;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+
+        flex-wrap: wrap;
+
+        padding: 12px 20px;
+    }
+
+    .navLinks {
+        order: 3;
+
+        width: 100%;
+
+        margin: 10px 0 0;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+    .rightSection {
+        margin-left: auto;
+    }
+}

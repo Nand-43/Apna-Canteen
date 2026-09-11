@@ -1,0 +1,181 @@
+.navbar {
+  width: 100%;
+  min-height: 75px;
+  padding: 10px 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(241, 208, 169, 0.96),
+      rgba(255, 247, 241, 0.96)
+    );
+
+  border-bottom: 1px solid rgba(255, 112, 67, 0.12);
+
+  box-shadow: 0 5px 20px rgba(100, 60, 30, 0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.logoIcon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ff713f, #ff936d);
+
+  border-radius: 13px;
+
+  font-size: 23px;
+
+  box-shadow: 0 5px 12px rgba(255, 113, 63, 0.25);
+}
+
+.logo h2 {
+  margin: 0;
+
+  color: #e85d32;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.logo span {
+  font-size: 11px;
+  color: #888;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.navLink {
+    
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 11px 15px;
+
+  color: #555;
+  background: transparent;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border-radius: 11px;
+
+  transition: all 0.25s ease;
+}
+
+.navLink:hover {
+  color: #e85d32;
+  background: #fff0e9;
+}
+
+.navLink.active {
+  color: #e85d32;
+  background: #ffe9df;
+  font-weight: 600;
+}
+
+.navLink.active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -7px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 25px;
+  height: 3px;
+
+  background: #ff713f;
+
+  border-radius: 10px;
+}
+
+
+.cartWrapper {
+  position: relative;
+  display: flex;
+}
+
+.cartBadge {
+  position: absolute;
+
+  top: -9px;
+  right: -9px;
+
+  min-width: 16px;
+  height: 16px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff5c35;
+  color: white;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  border-radius: 20px;
+}
+
+.logoutBtn {
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  background: #fff0ec;
+  color: #df5733;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.logoutBtn:hover {
+  background: #ff713f;
+  color: white;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 12px rgba(255, 113, 63, 0.22);
+}
+
+

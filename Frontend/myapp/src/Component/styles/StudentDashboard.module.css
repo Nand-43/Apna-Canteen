@@ -1,0 +1,784 @@
+.page {
+  min-height: 100vh;
+  padding: 35px 45px 60px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 160, 80, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(120, 190, 120, 0.12),
+      transparent 30%
+    ),
+    #fffaf7;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 45px;
+}
+
+.welcomeCard {
+  min-height: 270px;
+  padding: 35px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0e5,
+      #ffe2ce
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(120, 70, 30, 0.08);
+}
+
+.welcomeContent {
+  max-width: 75%;
+}
+
+.smallTitle {
+  font-size: 19px;
+  font-weight: 700;
+  color: #e36d27;
+  margin-bottom: 12px;
+}
+
+.welcomeCard h1 {
+  margin: 0;
+
+  font-size: 32px;
+  line-height: 1.15;
+
+  color: #35251d;
+}
+
+.welcomeText {
+  margin-top: 15px;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: #705b50;
+}
+
+.welcomeEmoji {
+  font-size: 75px;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+.primaryButton,
+.healthButton {
+  border: none;
+
+  padding: 11px 19px;
+
+  border-radius: 11px;
+
+  background: #ef7d32;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-top: 18px;
+
+  transition: 0.3s ease;
+}
+
+.primaryButton:hover,
+.healthButton:hover {
+  transform: translateY(-2px);
+}
+
+
+.healthCard {
+  min-height: 270px;
+  padding: 35px;
+
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #e7f4e8,
+      #fff6d9
+    );
+
+  box-shadow:
+    0 12px 35px rgba(50, 90, 50, 0.08);
+
+  display: flex;
+  align-items: center;
+}
+
+.healthContent {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.healthContent > div:first-child {
+  max-width: 72%;
+}
+
+.healthTitle {
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #56825e;
+}
+
+.healthCard h2 {
+  margin: 8px 0;
+
+  font-size: 27px;
+
+  color: #26382a;
+}
+
+.healthCard p {
+  color: #617064;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.healthMessage {
+  margin-top: 8px;
+}
+
+.healthEmoji {
+  font-size: 70px;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+
+
+.foodLoading {
+  width: 100%;
+
+  text-align: center;
+}
+
+.foodLoading span {
+  display: block;
+
+  font-size: 45px;
+
+  margin-bottom: 10px;
+}
+
+.foodLoading h2 {
+  font-size: 20px;
+
+  color: #344236;
+}
+
+
+.section,
+.orderSection{
+  margin-bottom: 45px;
+  margin-top: 34px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.sectionSubtitle {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+  color: #e27838;
+  margin-bottom: 15px;
+  
+}
+
+.sectionHeader h2 {
+  margin: 0;
+
+  font-size: 25px;
+
+  color: #30251f;
+}
+
+.viewAll {
+  border: none;
+
+  background: transparent;
+
+  color: #e36d27;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.foodGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+  width: 100%;
+}
+
+.foodCard{
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.foodCard:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.09);
+}
+
+.foodImage {
+  height: 200px;
+  width: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background: #e36d27;
+  object-fit: contain;
+}
+
+.foodInfo {
+  padding: 16px;
+}
+
+.foodInfo h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  color: #332820;
+}
+
+.foodInfo p {
+  margin: 5px 0 15px;
+
+  font-size: 12px;
+
+  color: #8a817b;
+}
+
+.foodBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.foodBottom strong {
+    font-size: 18px;
+    color: #30251f;
+}
+
+
+.price {
+  font-size: 17px;
+  font-weight: 700;
+  color: #e36d27;
+}
+
+
+/* =========================
+   ORDER SECTION
+========================= */
+
+.orderSection {
+  margin-top: 45px;
+  margin-bottom: 50px;
+}
+
+.orderCard {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid #f2eee9;
+}
+
+
+/* =========================
+   ORDER MAIN
+========================= */
+
+.orderMain {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.orderImage {
+  width: 95px;
+  height: 95px;
+  border-radius: 18px;
+  background: #fff3e8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 45px;
+  flex-shrink: 0;
+}
+
+.orderDetails {
+  flex: 1;
+}
+
+.orderTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.orderNumber {
+  font-size: 11px;
+  font-weight: 700;
+  color: #a69d96;
+  letter-spacing: 1px;
+}
+
+.orderDetails h3 {
+  margin: 6px 0 0;
+  font-size: 21px;
+  color: #30251f;
+}
+
+.statusBadge {
+  padding: 7px 13px;
+  border-radius: 20px;
+
+  background: #fff3df;
+  color: #e77a2c;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.orderInfo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  margin-top: 12px;
+
+  font-size: 13px;
+  color: #777;
+}
+
+.orderPrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: #30251f;
+}
+
+
+/* =========================
+   STATUS TRACKER
+========================= */
+
+.statusTracker {
+  display: flex;
+  align-items: center;
+
+  margin-top: 30px;
+  padding: 20px 10px;
+
+  background: #faf8f5;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.statusSteps {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 90px;
+  text-align: center;
+}
+.statusDot{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e2dc;
+  color: transparent;
+  border: 3px solid #e8e2dc;
+  font-size: 14px;
+  font-weight: 700;
+  transition:  0.3s ease;
+}
+
+.statusSteps span {
+  margin-top: 9px;
+  font-size: 12px;
+  color: #999;
+  font-weight: 600;
+}
+
+
+.statusSteps small {
+  margin-top: 4px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  color: #ef7d32;
+  text-transform: uppercase;
+}
+
+
+/* Completed / reached steps */
+
+.statusCompleted .statusDot {
+  background: #ef7d32;
+  border-color: #ef7d32;
+  color: white;
+}
+
+.statusCompleted span {
+  color: #30251f;
+}
+
+
+/* Currently active step */
+
+.statusCurrent .statusDot {
+   background: #ef7d32;
+  border-color: #ef7d32;
+  color: white;
+  box-shadow: 0 0 0 5px rgba(239, 125, 50, 0.15);
+}
+
+.statusCurrent span {
+  color: #ef7d32;
+  font-weight: 700;
+}
+
+
+/* Connecting line */
+
+.statusLine {
+  flex: 1;
+
+  height: 3px;
+
+  margin-top: 17px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  background: #e4ded7;
+
+  border-radius: 10px;
+
+}
+
+.statusLineCompleted {
+  background: #ef7d32;
+}
+
+.orderFooter {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.orderFooter p {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.orderFooter strong {
+  color: #e77a2c;
+}
+
+.trackButton {
+  border: none;
+  background: #ef7d32;
+  color: white;
+
+  padding: 10px 17px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.trackButton:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   EMPTY ORDER
+========================= */
+
+.emptyOrder {
+  background: #ffffff;
+
+  border: 1px dashed #ddd3ca;
+  border-radius: 22px;
+
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+.emptyOrderIcon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.emptyOrder h3 {
+  margin: 5px 0;
+  color: #30251f;
+}
+
+.emptyOrder p {
+  max-width: 400px;
+  margin: 8px auto 20px;
+
+  color: #888;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.orderFoodButton {
+  border: none;
+  background: #ef7d32;
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.orderMessage {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+
+  color: #777;
+}
+
+/* =====================================
+   ORDER PROGRESS
+===================================== */
+
+.progressContainer {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.progressStep {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 70px;
+}
+
+.progressStep span {
+  font-size: 11px;
+
+  color: #777;
+}
+
+.progressDot {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #eeeeee;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 13px;
+
+  color: #999;
+}
+
+.progressDot.completed {
+  background: #dcefdc;
+
+  color: #4c8051;
+}
+
+.progressDot.current {
+  background: #ffe2c9;
+
+  color: #e36d27;
+}
+
+.progressLine {
+  flex: 1;
+
+  height: 3px;
+
+  background: #e6e6e6;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================
+   ANIMATION
+===================================== */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1000px) {
+
+  .topSection {
+    grid-template-columns: 1fr;
+  }
+
+  .foodGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .page {
+    padding: 25px 18px;
+  }
+
+  .welcomeCard,
+  .healthCard {
+    padding: 25px;
+  }
+
+  .welcomeCard h1 {
+    font-size: 25px;
+  }
+
+  .welcomeEmoji,
+  .healthEmoji {
+    font-size: 50px;
+  }
+
+  .foodGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .orderTop {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .progressContainer {
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+  }
+
+  .progressLine {
+    min-width: 30px;
+  }
+}

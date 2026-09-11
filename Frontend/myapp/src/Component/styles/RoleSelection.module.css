@@ -1,0 +1,210 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container{
+
+    display:flex;
+    height:100vh;
+    overflow:hidden;
+    animation:slidePage .6s ease;
+
+}
+
+/* Slide Animation */
+
+@keyframes slidePage{
+
+    from{
+
+        transform:translateX(100%);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+/* LEFT */
+
+.left{
+
+    width:48%;
+    background:linear-gradient(135deg,#ff6b35,#ff914d);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+
+}
+
+.overlay{
+
+    position:absolute;
+    width:550px;
+    height:550px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+    top:-180px;
+    left:-180px;
+
+}
+
+.content{
+
+    z-index:2;
+    width:75%;
+
+}
+
+.content h1{
+
+    font-size:55px;
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    font-size:20px;
+    margin-bottom:35px;
+
+}
+
+.line{
+
+    width:80px;
+    height:4px;
+    background:white;
+    margin-bottom:40px;
+
+}
+
+.feature{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:22px;
+    font-size:20px;
+
+}
+
+.feature span{
+
+    width:35px;
+    height:35px;
+    background:white;
+    color:#ff6b35;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+
+}
+
+.quote{
+
+    margin-top:45px;
+    font-size:22px;
+    font-style:italic;
+
+}
+
+/* RIGHT */
+
+.right{
+
+    width:52%;
+    background:#fff8f3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.card{
+
+    width:500px;
+    background:white;
+    border-radius:25px;
+    padding:45px;
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    font-size:36px;
+    color:#222;
+    margin-bottom:10px;
+
+}
+
+.choose{
+
+    color:#666;
+    margin-bottom:35px;
+
+}
+
+.roleCard{
+
+    border:2px solid #f0f0f0;
+    border-radius:18px;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    cursor:pointer;
+    transition:.35s;
+
+}
+
+.roleCard:hover{
+
+    border-color:#ff6b35;
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(255,107,53,.18);
+
+}
+
+.roleCard h3{
+
+    font-size:25px;
+    margin-bottom:10px;
+    color:#333;
+
+}
+
+.roleCard p{
+
+    color:#777;
+    line-height:1.6;
+
+}
+
+.arrow{
+
+    font-size:35px;
+    color:#ff6b35;
+    transition:.3s;
+
+}
+
+.roleCard:hover .arrow{
+
+    transform:translateX(8px);
+
+}

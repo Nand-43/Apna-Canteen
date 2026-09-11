@@ -1,0 +1,212 @@
+.menuPage {
+  min-height: 100vh;
+  padding: 35px 45px;
+  background: #f6f7fb;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.header p {
+  margin-top: 8px;
+  color: #777;
+  font-size: 15px;
+}
+
+.header button {
+  border: none;
+  background: #ff6b35;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.header button:hover {
+  background: #e85a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.menuCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.menuCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.11);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  object-fit:cover;
+}
+
+.menuCard > div {
+  padding: 18px;
+}
+
+.menuCard h1 {
+  margin: 0 0 7px;
+  font-size: 21px;
+  color: #222;
+}
+
+.menuCard p {
+  margin: 5px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.menuCard p:nth-of-type(1) {
+  color: #ff6b35;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+
+.menuCard strong {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 20px;
+  color: #222;
+}
+
+.menuCard strong::before {
+  content: "₹";
+  font-size: 16px;
+  margin-right: 2px;
+}
+
+.menuCard span {
+  float: right;
+  margin-top: 16px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e8f8ee;
+  color: #16803c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.menuCard div > div:last-child {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.menuCard div > div:last-child button {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.menuCard div > div:last-child button:first-child {
+  color: #333;
+}
+
+.menuCard div > div:last-child button:first-child:hover {
+  background: #f3f3f3;
+}
+
+.menuCard div > div:last-child button:last-child {
+  color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.menuCard div > div:last-child button:last-child:hover {
+  background: #ff6b35;
+  color: white;
+}
+
+
+.loading {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+}
+
+.error {
+  padding: 20px;
+  text-align: center;
+  color: #d93025;
+  background: #fff1f0;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .menuPage {
+    padding: 25px 20px;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .header button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header button {
+    width: 100%;
+  }
+}

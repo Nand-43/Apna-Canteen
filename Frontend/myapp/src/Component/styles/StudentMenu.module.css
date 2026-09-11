@@ -1,0 +1,475 @@
+.page {
+  min-height: 100vh;
+  padding: 35px 45px 60px;
+  background: #fffaf6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 35px 45px;
+
+  border-radius: 25px;
+
+  background: linear-gradient(
+    135deg,
+    #fff0df,
+    #fff8f2
+  );
+
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  margin: 0 0 10px;
+
+  color: #ef7d32;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.menuHeader h1 {
+  margin: 0;
+
+  color: #30251f;
+
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+.description {
+  max-width: 500px;
+
+  margin-top: 15px;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.headerEmoji {
+  font-size: 100px;
+  margin-right: 50px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.searchBox {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  max-width: 600px;
+
+  background: white;
+
+  padding: 14px 18px;
+
+  border-radius: 14px;
+
+  border: 1px solid #eee5dd;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+
+  margin-bottom: 22px;
+}
+
+.searchBox span {
+  font-size: 18px;
+}
+
+.searchBox input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+
+  color: #30251f;
+
+  background: transparent;
+}
+
+.searchBox input::placeholder {
+  color: #aaa;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 35px;
+}
+
+.categoryButton,
+.categoryActive {
+  border: none;
+
+  padding: 9px 17px;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.categoryButton {
+  background: white;
+
+  color: #777;
+
+  border: 1px solid #eee3da;
+}
+
+.categoryButton:hover {
+  border-color: #ef7d32;
+  color: #ef7d32;
+}
+
+.categoryActive {
+  background: #ef7d32;
+
+  color: white;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.menuSection {
+  margin-top: 10px;
+}
+
+.sectionHeader {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.sectionSubtitle {
+  margin: 0 0 5px;
+
+  color: #ef7d32;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+
+  font-size: 27px;
+
+  color: #30251f;
+}
+
+.itemCount {
+  color: #999;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   FOOD GRID
+========================= */
+
+.foodGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =========================
+   FOOD CARD
+========================= */
+
+.foodCard {
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #f1ebe5;
+
+  transition: 0.25s ease;
+}
+
+.foodCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.imageWrapper {
+  position: relative;
+
+  height: 190px;
+
+  overflow: hidden;
+
+  background: #fff1e5;
+}
+
+.foodImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.categoryTag {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #e66f27;
+
+  padding: 5px 9px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   FOOD INFO
+========================= */
+
+.foodInfo {
+  padding: 17px;
+}
+
+.foodInfo h3 {
+  margin: 0 0 7px;
+
+  color: #30251f;
+
+  font-size: 18px;
+}
+
+.foodInfo p {
+  margin: 0;
+
+  color: #888;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  min-height: 36px;
+}
+
+
+/* =========================
+   PRICE + BUTTON
+========================= */
+
+.foodBottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 17px;
+}
+
+.foodBottom strong {
+  color: #30251f;
+
+  font-size: 19px;
+}
+
+.addButton {
+  border: none;
+
+  background: #ef7d32;
+
+  color: white;
+
+  padding: 9px 15px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.addButton:hover {
+  background: #df6d25;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.message {
+  padding: 45px;
+
+  text-align: center;
+
+  background: white;
+
+  border-radius: 18px;
+
+  color: #777;
+}
+
+.emptyMenu {
+  text-align: center;
+
+  padding: 60px 20px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  border: 1px dashed #ddd2c8;
+}
+
+.emptyMenu div {
+  font-size: 45px;
+}
+
+.emptyMenu h3 {
+  color: #30251f;
+
+  margin: 10px 0 5px;
+}
+
+.emptyMenu p {
+  color: #888;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .foodGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .page {
+    padding: 25px;
+  }
+
+  .menuHeader {
+    padding: 30px;
+  }
+
+  .headerEmoji {
+    font-size: 70px;
+    margin-right: 10px;
+  }
+
+  .foodGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .menuHeader {
+    padding: 25px;
+
+    text-align: center;
+  }
+
+  .menuHeader h1 {
+    font-size: 30px;
+  }
+
+  .headerEmoji {
+    display: none;
+  }
+
+  .foodGrid {
+    grid-template-columns: 1fr;
+  }
+
+}

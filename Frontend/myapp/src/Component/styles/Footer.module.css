@@ -1,0 +1,54 @@
+.footer{
+    background:#222;
+    color:white;
+    padding:60px 8% 20px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+
+.container h2,
+.container h3{
+    margin-bottom:20px;
+}
+
+.container p{
+    color:#ccc;
+    line-height:1.7;
+}
+
+.container a{
+    display:block;
+    text-decoration:none;
+    color:#ccc;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.container a:hover{
+    color:#ff7a00;
+}
+
+.social{
+    display:flex;
+    gap:18px;
+    font-size:26px;
+    cursor:pointer;
+}
+
+.social svg:hover{
+    color:#ff7a00;
+}
+
+hr{
+    margin:40px 0 20px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.copy{
+    text-align:center;
+    color:#bbb;
+}
