@@ -9,7 +9,6 @@ const Admin_menu = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const {id} = useParams();
 
   useEffect(() => {
     fetchMenu();

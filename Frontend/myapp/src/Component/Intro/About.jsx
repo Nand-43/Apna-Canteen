@@ -3,7 +3,7 @@ import styles from "../styles/About.module.css";
 import aboutImg from "../../assets/aboutImg1.png";
 export default function About(){
     return (
-        <section className={styles.about}> 
+        <section className={styles.about} id="about"> 
             <h2>About Apna Canteen</h2>
 
             <div className={styles.container}>

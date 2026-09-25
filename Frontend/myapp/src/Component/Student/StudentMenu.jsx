@@ -2,21 +2,19 @@ import React from "react";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import styles from "../styles/StudentMenu.module.css";
+import {useCart} from "../Context/CartContext.jsx";
 
 export default function StudentMenu(){
+
     const [menu, setMenu] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-
     const [search , setSearch] = useState("");
-    const [seletedCategory, setSelectedCategory] = useState("All");
+    const [selectedCategory, setSelectedCategory] = useState("All");
 
-    useEffect(() => {
-        fetchMenu();
-    }, []);
+    const { addToCart } = useCart();
 
-
-    const fetchMenu = async(req,res) => {
+    const fetchMenu = async() => {
 
         try{
 
@@ -45,6 +43,31 @@ export default function StudentMenu(){
     }
     };
 
+    useEffect(() => {
+        fetchMenu();
+    }, []);
+
+    const handleAddOrder = async(dishId) => {
+        try{
+            const token = localStorage.getItem("accessToken");
+            
+            const response = await axios.post("http://localhost:5000/orderRoutes/create",
+                
+                 {
+                headers:{
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            console.log("Order placed", response.data.order);
+            alert("Order placed successfuly");
+        }
+        catch(err){
+             console.log(err);
+             alert("Failed to place order")
+        }
+    }
+
     
 
     const categories = [
@@ -56,7 +79,9 @@ export default function StudentMenu(){
 
         const matchesSearch  = item.dish_name.toLowerCase().includes(search.toLowerCase());
 
-        const matchesCategory = setSelectedCategory === "All" || item.category === seletedCategory;
+        const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
+
+        return matchesSearch && matchesCategory;
     })
 
 
@@ -65,7 +90,7 @@ export default function StudentMenu(){
 
        <section className={styles.menuHeader}>
         <div>
-            <p className={styles.menuHeader}> 🍽Apna Canteen Menu</p>
+            <p className={styles.subtitle}> 🍽Apna Canteen Menu</p>
             <h1>What are you
                 <br/>
                 Craving today?
@@ -78,7 +103,7 @@ export default function StudentMenu(){
 
         </div>
 
-        <div>🍝</div>
+        <div className={styles.headerEmoji}>🍝</div>
        </section>
 
        <div className={styles.searchBox}>
@@ -102,7 +127,7 @@ export default function StudentMenu(){
             key={category}
             
             className={
-                seletedCategory === category
+                selectedCategory === category
                 ? styles.categoryActive 
                 : styles.categoryButton
             }
@@ -125,9 +150,9 @@ export default function StudentMenu(){
                 </p>
 
                 <h2>
-                    {seletedCategory === "All"
+                    {selectedCategory === "All"
                     ? "Today's Menu" :
-                    seletedCategory
+                    selectedCategory
                     }
                 </h2>
             </div>
@@ -135,7 +160,7 @@ export default function StudentMenu(){
 
             <span
             className={styles.itemCount}
-            >{filteredMenu.length}</span>
+            >{filteredMenu.length} items</span>
         </div>
 
 
@@ -157,7 +182,7 @@ export default function StudentMenu(){
 
         {
             !loading && !error && filteredMenu.length === 0 && (
-               <div>
+               <div className={styles.emptyMenu}>
 
                 <div> 🍽</div>
                 <h3>No food Found</h3>
@@ -168,7 +193,7 @@ export default function StudentMenu(){
         }
 
         {!loading && !error && filteredMenu.length > 0 && (
-            <div>
+            <div className={styles.foodGrid}>
                 {
                     filteredMenu.map((item) => (
                         <div 
@@ -176,7 +201,7 @@ export default function StudentMenu(){
                         key={item.id}
                         >
 
-                            <div>
+                            <div className={styles.imageWrapper}>
                                 <img src={item.image 
                                     ? `http://localhost:5000/uploads/menu/${item.image}`
                                     : "/food-placeholder.png"
@@ -194,12 +219,14 @@ export default function StudentMenu(){
 
                                <p>{item.description}</p>
 
-                               <div className={styles.foodButtom}>
+                               <div className={styles.foodBottom}>
                                 <strong>
                                     {item.price}
                                 </strong>
 
-                                <button className={styles.addButton}>
+                                
+
+                                <button className={styles.addButton} onClick={() => addToCart(item)}>
                                     Add +
                                 </button>
                                </div>

@@ -1,0 +1,275 @@
+.page {
+  min-height: 100vh;
+  padding: 35px 50px 60px;
+  background: #fffaf5;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 35px;
+  padding: 35px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(135deg, #fff1df, #fff8f0);
+  border: 1px solid #f4dfc8;
+  border-radius: 24px;
+}
+
+.subtitle {
+  margin: 0 0 10px;
+  color: #e87520;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #292929;
+  font-size: 38px;
+  font-weight: 750;
+}
+
+.description {
+  margin: 10px 0 0;
+  color: #777;
+  font-size: 15px;
+}
+
+.headerEmoji {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 45px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+.orderSection {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.sectionSubtitle {
+  margin: 0 0 5px;
+  color: #e87520;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  color: #292929;
+  font-size: 27px;
+}
+
+.orderCount {
+  padding: 8px 14px;
+
+  background: #fff0df;
+  color: #d96513;
+
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.orderCard {
+  padding: 24px 26px;
+
+  background: #ffffff;
+  border: 1px solid #eee4db;
+  border-radius: 18px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+
+  transition: 0.25s ease;
+}
+
+.orderCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+.orderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f0e8e1;
+}
+
+.orderFood {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.orderImage {
+  width: 95px;
+  height: 95px;
+  border-radius: 18px;
+  background: #fff3e8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 45px;
+  flex-shrink: 0;
+}
+
+.foodImage {
+  height: 95px;
+  width: 95px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+
+.orderFood h3 {
+  margin: 0 0 5px;
+
+  color: #292929;
+  font-size: 18px;
+}
+
+.orderFood p {
+  margin: 0;
+
+  color: #8a8a8a;
+  font-size: 13px;
+}
+
+
+.statusBadge {
+  padding: 7px 13px;
+
+  background: #fff3e3;
+  color: #e87520;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+
+.orderDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 30%;
+  padding-top: 18px;
+}
+
+.orderDetails div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.orderDetails span {
+  color: #999;
+  font-size: 12px;
+}
+
+.orderDetails strong {
+  color: #292929;
+  font-size: 16px;
+}
+
+.message {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #eee4db;
+  border-radius: 18px;
+
+  color: #777;
+}
+
+.message p {
+  margin: 0;
+}
+
+
+
+.emptyOrders {
+  padding: 65px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px dashed #e5d7ca;
+  border-radius: 20px;
+}
+
+.emptyIcon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff2e3;
+  border-radius: 50%;
+
+  font-size: 34px;
+}
+
+.emptyOrders h3 {
+  margin: 0 0 8px;
+
+  color: #292929;
+  font-size: 20px;
+}
+
+.emptyOrders p {
+  max-width: 450px;
+  margin: 0 auto;
+
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+

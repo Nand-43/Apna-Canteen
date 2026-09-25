@@ -1,9 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../styles/StudentNavbar.module.css";
+import {useCart} from "../Context/CartContext.jsx";
+
 function Student_Navbar(){
     const navigate = useNavigate();
     const navLinkClass = ({ isActive }) =>
     isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
+
+    const {totalItems} = useCart();
 
 
     const handleLogout = () => {
@@ -63,15 +67,16 @@ function Student_Navbar(){
                 >
                     <span className={styles.cartWapper}>
                         🛒
-                        <span className={styles.cartBadge}>0</span>
+                        <span className={styles.cartBadge}>{totalItems}</span>
                     </span>
 
                     <span>Cart</span>
                 </NavLink>
 
                 <NavLink
-                to="navLinkClass"
-                className={navLinkClass}>
+                to="account"
+                className={styles.navLink}
+                >
                     👤<span>Profile</span>
                 </NavLink>
              </div>

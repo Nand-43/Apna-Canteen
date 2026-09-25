@@ -49,7 +49,6 @@
     font-size: 15px;
 }
 
-/* Form */
 
 form {
     display: grid;
@@ -211,31 +210,3 @@ form button:disabled {
     text-decoration: underline;
 }
 
-
-@media (max-width: 700px) {
-
-    .container {
-        padding: 20px 15px;
-        align-items: flex-start;
-    }
-
-    .registerCard {
-        padding: 30px 22px;
-        margin-top: 20px;
-    }
-
-    form {
-        grid-template-columns: 1fr;
-    }
-
-    .role,
-    form button,
-    .error,
-    .success {
-        grid-column: auto;
-    }
-
-    .header h1 {
-        font-size: 28px;
-    }
-}

@@ -9,17 +9,27 @@ import Footer from "../../Component/Intro/Footer.jsx";
 function LandingPage() {
   return (
     <div>
-     <Navbar/>
+     <Navbar />
 
-     <Home/>
-
+     <section id="home">
+      <Home/>
+     </section>
+    
+     <section id="about">
      <About/>
-
+     </section>
+     
+     <section id="feature">
      <Feature/>
+     </section>
 
+     <section id="contact">
      <Contact/>
+     </section>
 
+     <section id="footer">
      <Footer/>
+     </section>
      </div>
   
   )

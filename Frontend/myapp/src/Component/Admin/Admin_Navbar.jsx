@@ -1,4 +1,3 @@
-import react from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import styles from "../styles/AdminNavbar.module.css";
 export default function AdminNavbar(){
@@ -88,10 +87,10 @@ export default function AdminNavbar(){
                </div>
 
                <div className={styles.rightSection}>
-                <div styles={styles.profile}>
-                    <span className={styles.profileIcon}>👤</span>
-                    <span>Admin</span>
-                </div>
+                <NavLink to="/admin/account" className={styles.navLink}>
+                    👤<span > Admin</span>
+                   
+                </NavLink>
 
                 <button
                 className={styles.logout}

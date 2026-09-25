@@ -274,7 +274,7 @@
     0 14px 30px rgba(0, 0, 0, 0.09);
 }
 
-.foodImage {
+.menuImage {
   height: 200px;
   width: 100%;
   display: block;
@@ -323,11 +323,6 @@
   color: #e36d27;
 }
 
-
-/* =========================
-   ORDER SECTION
-========================= */
-
 .orderSection {
   margin-top: 45px;
   margin-bottom: 50px;
@@ -364,6 +359,16 @@
 
   font-size: 45px;
   flex-shrink: 0;
+}
+
+.foodImage {
+  height: 95px;
+  width: 95px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  border-radius: 40px;
 }
 
 .orderDetails {
@@ -420,10 +425,6 @@
 }
 
 
-/* =========================
-   STATUS TRACKER
-========================= */
-
 .statusTracker {
   display: flex;
   align-items: center;
@@ -478,8 +479,6 @@
   text-transform: uppercase;
 }
 
-
-/* Completed / reached steps */
 
 .statusCompleted .statusDot {
   background: #ef7d32;
@@ -570,10 +569,6 @@
 }
 
 
-/* =========================
-   EMPTY ORDER
-========================= */
-
 .emptyOrder {
   background: #ffffff;
 
@@ -631,10 +626,6 @@
 
   color: #777;
 }
-
-/* =====================================
-   ORDER PROGRESS
-===================================== */
 
 .progressContainer {
   display: flex;
@@ -723,62 +714,3 @@
 }
 
 
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 1000px) {
-
-  .topSection {
-    grid-template-columns: 1fr;
-  }
-
-  .foodGrid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-}
-
-
-@media (max-width: 650px) {
-
-  .page {
-    padding: 25px 18px;
-  }
-
-  .welcomeCard,
-  .healthCard {
-    padding: 25px;
-  }
-
-  .welcomeCard h1 {
-    font-size: 25px;
-  }
-
-  .welcomeEmoji,
-  .healthEmoji {
-    font-size: 50px;
-  }
-
-  .foodGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .orderTop {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 15px;
-  }
-
-  .progressContainer {
-    overflow-x: auto;
-
-    padding-bottom: 10px;
-  }
-
-  .progressLine {
-    min-width: 30px;
-  }
-}

@@ -1,4 +1,3 @@
-import express from "express";
 import db from "../../config/db.js";
 
 export async function getOrders(req, res){
@@ -6,9 +5,10 @@ export async function getOrders(req, res){
      if(req.user.role === "admin"){
         
         const orders = await db.query(
-            `Select o.id, o.dish_name, o.quantity, o.total_price, o.status, u.name as student_name, u.email
+            `Select o.id, o.dish_name, o.quantity, o.total_price, o.status, u.name as student_name, u.email,u.phone, m.image as dish_image
             from orders o
             Join users u on o.student_id = u.id
+            Join menu m on o.dish_name = m.dish_name
             `
         );
  
@@ -20,9 +20,10 @@ export async function getOrders(req, res){
      else if(req.user.role === "student"){
 
         const orders = await db.query(
-            `Select o.id, o.dish_name, o.quantity , o.status 
+            `Select o.id, o.dish_name, o.quantity , o.status ,o.total_price, o.created_at, o.image
             from orders o
-            where o.student_id = $1`,
+            where o.student_id = $1
+            order by o.created_at desc`,
             [req.user.id]
         );
         return res.json({
@@ -32,11 +33,16 @@ export async function getOrders(req, res){
      }
 
      else{
-        return res.status(500).json({error:"Unauthorized role"})
+        return res.status(500).json({
+            error:"Unauthorized role"
+        })
      }
    }
    catch(err){
-      res.status(500).json({error: "Failed to reach orders"});
+      res.status(500).json({
+        error: "Failed to reach orders",
+        details: err.message
+    });
    }
 }
 
@@ -44,17 +50,18 @@ export async function getStudentOrders(req, res) {
   try {
     const orders = await db.query(
       `SELECT 
-         id, 
-         dish_name, 
-         image,
-         quantity, 
-         total_price, 
-         status, 
-         created_at
-       FROM orders
-       WHERE student_id = $1
-       ORDER BY created_at DESC`,
-      [req.user.id]   // 👈 comes from JWT payload
+         o.id, 
+         o.dish_name, 
+         o.quantity, 
+         o.total_price, 
+         o.status, 
+         m.image as dish_image,
+         o.created_at
+       FROM orders o
+       Join menu m on o.dish_name = m.dish_name
+       WHERE o.student_id = $1
+       ORDER BY o.created_at DESC`,
+      [req.user.id]   
     );
 
     return res.json({
@@ -74,20 +81,33 @@ export async function createOrder(req, res){
         if(req.user.role !== "student"){
             return res.status(403).json({error: "Only students can place orders"});
         }
+        
+        const {dish_name, dish_id, quantity} = req.body;
+        console.log("Dish id received ", dish_id);
+        console.log("User from token", req.user);
 
-        const {dish_name, quantity, total_Price} = req.body;
 
-        if(!dish_name || !quantity){
+
+        if(!dish_id || !quantity){
             return res.status(400).json({error: " Items and quantity are required."})
         }
 
-        const newOrder = await db.query(
-            `Insert into orders (student_id, dish_name, quantity, total_price)
-            values ($1, $2, $3, $4)
-            returning *`,
-            [req.user.id, dish_name, quantity , total_Price]
+        const dish = await db.query(
+            "Select dish_name,price from menu where id = $1",
+            [dish_id]
         );
 
+        const selectedDish = dish.rows[0];
+        const totalPrice = selectedDish.price *quantity;
+
+
+        const newOrder = await db.query(
+            `Insert into orders (student_id, dish_name, quantity, total_price, created_at)
+            values ($1, $2, $3, $4, NOW())
+            returning id, dish_name, quantity, total_price,  created_at`,
+            [req.user.id, selectedDish.dish_name, quantity , totalPrice]
+        );
+        
         res.json({
              message: "Order placed successfully",
              order: newOrder.rows[0]
@@ -166,11 +186,14 @@ export async function updateOrderStatus(req,res) {
     const {id} = req.params;
     const {status} = req.body;
 
+    try{
+
     const allowedStatus = [
         "pending",
         "preparing",
         "ready",
-        "completed"
+        "completed",
+        "cancelled"
     ];
 
     if(!allowedStatus.includes(status)){
@@ -179,9 +202,9 @@ export async function updateOrderStatus(req,res) {
         });
     }
 
-    try{
+
        const result = await db.query(
-        `Update orders set status = $1 where id = $2 returning *`,
+        `Update orders set status = $1 where id = $2 returning id, dish_name, quantity, total_price, status, created_at`,
         [status,id]
        );
 

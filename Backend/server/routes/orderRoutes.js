@@ -4,7 +4,7 @@ import {authenticateToken, authorizeAdmin} from "../middleware/authMiddleware.js
 
 const router = express.Router();
 
-router.get("/all", authenticateToken, authorizeAdmin ,getOrders);
+router.get("/all", authenticateToken ,getOrders);
 router.get("/myOrders", authenticateToken, getStudentOrders);
 router.post("/create", authenticateToken, createOrder);
 router.get("/singleOrder/:id", authenticateToken, getSingleOrder);

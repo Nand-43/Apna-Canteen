@@ -25,7 +25,7 @@ export const authorizeAdmin = (req, res, next) => {
      
 
     if(req.user.role !== "admin"){
-         return res.Status(403).json({
+         return res.status(403).json({
         error: "Access denied. Insufficient role."
     });
 }

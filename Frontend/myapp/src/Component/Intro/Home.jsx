@@ -8,7 +8,7 @@ export default function Home(){
     const navigate = useNavigate();
     
     return(
-        <section className={styles.home}>
+        <section className={styles.home} >
             <div className={styles.left}>
                 <p className={styles.tag}>
                 🍽 Apna Canteen

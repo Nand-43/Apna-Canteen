@@ -9,6 +9,7 @@ export default function Admin_dashboard() {
     const [dashboardData, setDashboardData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [Orders, setOrders] = useState("");
 
     useEffect(() => {
         fetchDashboard();
@@ -28,8 +29,9 @@ export default function Admin_dashboard() {
                     }
                 } 
             );
+            console.log("response data", response.data);
 
-            setDashboardData(response.data )
+            setDashboardData(response.data)
         }
         catch(err){
 
@@ -64,6 +66,14 @@ export default function Admin_dashboard() {
         );
 
         fetchDashboard();
+
+        console.log("Status update", response.data);
+
+        setOrders((prevOrders) => 
+        prevOrders.map((order) => 
+        
+        order.id === orderId ? {...order, status: newStatus} :order
+    ))
  
     } catch (err) {
         console.log("Status update error:", err);
@@ -72,7 +82,7 @@ export default function Admin_dashboard() {
     
 
     const today = new Date();
-
+  
     if(loading){
         return <h2>Loading dashboard...</h2>
     }
@@ -268,7 +278,7 @@ export default function Admin_dashboard() {
                         <p>Latest orders placed by students</p>
                     </div>
 
-                    <button className={styles.viewAll}>
+                    <button className={styles.viewAll} onClick={() => navigate("/admin/orders")}>
                         View All →
                     </button>
 

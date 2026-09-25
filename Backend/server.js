@@ -1,12 +1,12 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import pool from "./config/db.js";
 import path from "path";
 import authRoutes from "./server/routes/authRoutes.js";
 import orderRoutes from "./server/routes/orderRoutes.js";
 import menuRoutes from "./server/routes/menuRoutes.js";
 import adminRoutes from "./server/routes/adminRoutes.js";
+import userRoutes from "./server/routes/userRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -19,8 +19,12 @@ app.use(
     "/uploads/menu",
     express.static(path.join(process.cwd(), "uploads/menu"))
 );
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
+
+
 app.use("/menuRoutes", menuRoutes);
 app.use("/adminRoutes", adminRoutes);
+app.use("/userRoutes", userRoutes);
 
 const PORT = process.env.Port || 5000
 

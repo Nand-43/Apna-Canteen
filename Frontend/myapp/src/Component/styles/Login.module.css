@@ -1,7 +1,5 @@
 .container {
   min-height: 100vh;
-  
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +19,6 @@
     #fff8f2;
 }
 
-/* Main login card */
 .loginCard {
   width: 100%;
   max-width: 430px;
@@ -41,7 +38,6 @@
   position: relative;
 }
 
-/* Icon */
 .icon {
   width: 65px;
   height: 65px;
@@ -60,7 +56,6 @@
 }
 
 
-/* Heading */
 .title {
   margin: 0;
 
@@ -70,7 +65,6 @@
   color: #111;
 }
 
-/* Subtitle */
 .subtitle {
   margin-top: 8px;
   margin-bottom: 30px;
@@ -93,19 +87,16 @@
   font-size: 12px;
 }
 
-/* Form */
 .form {
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-/* Input group */
 .inputGroup {
   margin-bottom: 20px;
 }
 
-/* Labels */
 .inputGroup label {
   display: block;
 
@@ -116,7 +107,6 @@
   color: #222;
 }
 
-/* Inputs */
 .inputGroup input {
   width: 100%;
 
@@ -143,7 +133,6 @@
   box-shadow: 0 0 0 3px rgba(255, 117, 66, 0.12);
 }
 
-/* Login button */
 .loginButton {
   width: 100%;
 
@@ -182,7 +171,6 @@
   transform: none;
 }
 
-/* Error message */
 .error {
   margin-top: 15px;
 
@@ -199,7 +187,6 @@
   text-align: center;
 }
 
-/* Success message */
 .success {
   margin-top: 15px;
 
@@ -216,7 +203,6 @@
   text-align: center;
 }
 
-/* Register link */
 .registerText {
   margin-top: 25px;
 

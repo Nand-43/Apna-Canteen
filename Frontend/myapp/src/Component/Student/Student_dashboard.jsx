@@ -76,14 +76,7 @@ function StudentDashboard() {
       }
     };
 
-    const activeOrder  = orders.find(
-      (order) => 
-        order.status === "pending" ||
-      order.status === "preparing" ||
-      order.status === "ready"
-    );
-
-    const currentOrder = activeOrder || orders[0];
+    
 
     const statusSteps = [
       "pending",
@@ -91,10 +84,6 @@ function StudentDashboard() {
       "ready",
       "completed"
     ];
- 
-    const currentStatus = currentOrder?.status?.trim().toLowerCase();
-
-    const currentStatusIndex = currentStatus ? statusSteps.indexOf(currentStatus) : -1;
 
 
   return (    
@@ -203,7 +192,7 @@ function StudentDashboard() {
        <div className={styles.foodCard} key={item.id}>
          <img 
          src={`http://localhost:5000/uploads/menu/${item.image}`}
-         className={styles.foodImage}
+         className={styles.menuImage}
          />
 
          <div className={styles.foodInfo}>
@@ -279,13 +268,25 @@ function StudentDashboard() {
     </div>
   )}
 
-  {!loadingOrders && !orderError && orders.length > 0 && (
+  {!loadingOrders && !orderError && orders.length > 0 && orders.map((currentOrder) => {
+  
+    const currentStatus = currentOrder.status?.trim().toLowerCase();
+     const currentStatusIndex = statusSteps.indexOf(currentStatus);
+
+     return (
+
     <div className={styles.orderCard}>
 
-      <div className={styles.orderMain}>
+      <div className={styles.orderMain}   key={currentOrder.id}>
 
         <div className={styles.orderImage}>
-          <img src={`http://localhost:5000/orderRoutes/myOrder/${currentOrder.image}`}/>
+          {currentOrder.dish_image ? (
+                            <img 
+                            className={styles.foodImage}
+                            src={`http://localhost:5000/uploads/menu/${currentOrder.dish_image}`} alt="" />
+                          ) : (
+                            <div className={styles.imagePlaceholder}>🍽</div>
+                          )}
         </div>
 
         <div className={styles.orderDetails}>
@@ -315,8 +316,10 @@ function StudentDashboard() {
           </div>
 
         </div>
+        
 
       </div>
+      
 
 
       <div className={styles.statusTracker}>
@@ -364,6 +367,8 @@ function StudentDashboard() {
               </React.Fragment>
             )
           })
+        
+          
         }
 
         
@@ -397,7 +402,13 @@ function StudentDashboard() {
       </div>
 
     </div>
-  )}
+     );
+  }
+)
+}
+
+
+
 
 </section>
    </div>

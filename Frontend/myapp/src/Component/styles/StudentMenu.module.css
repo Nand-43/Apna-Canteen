@@ -1,13 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 .page {
   min-height: 100vh;
-  padding: 35px 45px 60px;
-  background: #fffaf6;
+  padding:  45px 60px;
+  background: #FBF1E4;
+  background-image: radial-gradient(#00000006 1px, transparent 1px);
+  background-size: 18px 18px;
+  font-family: 'Inter', sans-serif;
+  color: #2B211A;
 }
 
 
-/* =========================
-   HEADER
-========================= */
 
 .menuHeader {
   display: flex;
@@ -15,58 +19,67 @@
   justify-content: space-between;
 
   padding: 35px 45px;
-
   border-radius: 25px;
+  margin: 0 -45px 40px;
 
-  background: linear-gradient(
-    135deg,
-    #fff0df,
-    #fff8f2
-  );
-
-  margin-bottom: 30px;
+  background: #f57c48;
+  position: relative;
 }
 
+
+
 .subtitle {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 
-  color: #ef7d32;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
 
-  font-size: 12px;
-  font-weight: 700;
+  color: #ffffff;
 
-  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .menuHeader h1 {
   margin: 0;
+  font-family: 'Baloo 2', sans-serif;
 
-  color: #30251f;
+  color: #FFFDF9;
 
-  font-size: 40px;
-  line-height: 1.15;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .description {
-  max-width: 500px;
+  max-width: 460px;
 
-  margin-top: 15px;
+  margin-top: 16px;
 
-  color: #777;
+  color: #55412c;
 
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .headerEmoji {
-  font-size: 100px;
-  margin-right: 50px;
+  flex-shrink: 0;
+
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 62px;
+
+  background: #f37843;
+  border: 2px dashed #f59957;
+  border-radius: 50%;
 }
 
-
-/* =========================
-   SEARCH
-========================= */
 
 .searchBox {
   display: flex;
@@ -74,23 +87,22 @@
 
   gap: 12px;
 
-  max-width: 600px;
+  max-width: 100%;
 
-  background: white;
+  background: #FFFDF9;
 
-  padding: 14px 18px;
+  padding: 15px 20px;
 
-  border-radius: 14px;
+  border-radius: 10px;
+  border: 1.5px dashed #E3C9A8;
 
-  border: 1px solid #eee5dd;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
-
-  margin-bottom: 22px;
+  margin: -34px 0 26px;
+  position: relative;
+  z-index: 1;
 }
 
 .searchBox span {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .searchBox input {
@@ -99,71 +111,63 @@
   border: none;
   outline: none;
 
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
 
-  color: #30251f;
+  color: #2B211A;
 
   background: transparent;
 }
 
 .searchBox input::placeholder {
-  color: #aaa;
+  color: #b3a58f;
 }
 
-
-/* =========================
-   CATEGORIES
-========================= */
 
 .categories {
   display: flex;
 
-  gap: 10px;
+  gap: 9px;
 
   flex-wrap: wrap;
 
-  margin-bottom: 35px;
+  margin-bottom: 38px;
 }
 
 .categoryButton,
 .categoryActive {
-  border: none;
+  border-radius: 8px;
 
-  padding: 9px 17px;
-
-  border-radius: 25px;
+  padding: 9px 18px;
 
   cursor: pointer;
 
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 600;
 
-  transition: 0.2s ease;
+  transition: 0.15s ease;
 }
 
 .categoryButton {
-  background: white;
+  background: transparent;
 
-  color: #777;
+  color: #6b5c4a;
 
-  border: 1px solid #eee3da;
+  border: 1.5px solid #E3C9A8;
 }
 
 .categoryButton:hover {
-  border-color: #ef7d32;
-  color: #ef7d32;
+  border-color: #C1440E;
+  color: #C1440E;
 }
 
 .categoryActive {
-  background: #ef7d32;
+  background: #C1440E;
+  border: 1.5px solid #C1440E;
 
-  color: white;
+  color: #FFFDF9;
 }
-
-
-/* =========================
-   SECTION
-========================= */
 
 .menuSection {
   margin-top: 10px;
@@ -175,39 +179,35 @@
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .sectionSubtitle {
-  margin: 0 0 5px;
+  margin: 0 0 4px;
 
-  color: #ef7d32;
+  color: #C1440E;
 
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .sectionHeader h2 {
   margin: 0;
+  font-family: 'Baloo 2', sans-serif;
 
-  font-size: 27px;
+  font-size: 26px;
+  font-weight: 700;
 
-  color: #30251f;
+  color: #2B211A;
 }
 
 .itemCount {
-  color: #999;
+  color: #8a7a64;
 
   font-size: 13px;
+  font-weight: 500;
 }
 
-
-/* =========================
-   FOOD GRID
-========================= */
 
 .foodGrid {
   display: grid;
@@ -215,49 +215,40 @@
   grid-template-columns:
     repeat(4, minmax(0, 1fr));
 
-  gap: 22px;
+  gap: 24px;
 }
 
 
-/* =========================
-   FOOD CARD
-========================= */
-
 .foodCard {
-  background: white;
+  background: #FFFDF9;
 
-  border-radius: 18px;
+  border-radius: 12px;
 
   overflow: hidden;
 
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 20px rgba(193, 68, 14, 0.07);
+  border: 1px solid #F0E4D3;
 
-  border: 1px solid #f1ebe5;
-
-  transition: 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .foodCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 12px 26px rgba(193, 68, 14, 0.13);
 }
 
-
-/* =========================
-   IMAGE
-========================= */
 
 .imageWrapper {
   position: relative;
 
-  height: 190px;
+  height: 180px;
 
   overflow: hidden;
 
-  background: #fff1e5;
+  background: #F5E4CE;
+
+  border-bottom: 2px dashed #E3C9A8;
 }
 
 .foodImage {
@@ -272,49 +263,43 @@
 .categoryTag {
   position: absolute;
 
-  top: 12px;
-  left: 12px;
+  top: 0;
+  left: 14px;
 
-  background: rgba(255, 255, 255, 0.92);
+  background: #f57003;
 
-  color: #e66f27;
+  color: #FFFDF9;
 
-  padding: 5px 9px;
-
-  border-radius: 8px;
+  padding: 5px 10px 6px;
 
   font-size: 10px;
-
   font-weight: 700;
 
-  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
 }
 
-
-/* =========================
-   FOOD INFO
-========================= */
-
 .foodInfo {
-  padding: 17px;
+  padding: 18px 17px 17px;
 }
 
 .foodInfo h3 {
-  margin: 0 0 7px;
+  margin: 0 0 6px;
+  font-family: 'Baloo 2', sans-serif;
 
-  color: #30251f;
+  color: #2B211A;
 
   font-size: 18px;
+  font-weight: 700;
 }
 
 .foodInfo p {
   margin: 0;
 
-  color: #888;
+  color: #8a7a64;
 
-  font-size: 12px;
+  font-size: 12.5px;
 
-  line-height: 1.5;
+  line-height: 1.55;
 
   display: -webkit-box;
 
@@ -324,13 +309,10 @@
 
   overflow: hidden;
 
-  min-height: 36px;
+  min-height: 38px;
 }
 
 
-/* =========================
-   PRICE + BUTTON
-========================= */
 
 .foodBottom {
   display: flex;
@@ -338,56 +320,66 @@
   align-items: center;
   justify-content: space-between;
 
-  margin-top: 17px;
+  margin-top: 16px;
 }
 
 .foodBottom strong {
-  color: #30251f;
+  display: inline-flex;
+  align-items: center;
 
-  font-size: 19px;
+  color: #C1440E;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+  border: 1.5px dashed #E8A93B;
+}
+
+.foodBottom strong::before {
+  content: "₹";
+  margin-right: 2px;
+  opacity: 0.75;
 }
 
 .addButton {
   border: none;
 
-  background: #ef7d32;
+  background: #2B211A;
 
-  color: white;
+  color: #FFFDF9;
 
-  padding: 9px 15px;
+  padding: 9px 16px;
 
-  border-radius: 9px;
+  border-radius: 8px;
 
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
-
   font-weight: 700;
 
   cursor: pointer;
 
-  transition: 0.2s ease;
+  transition: 0.15s ease;
 }
 
 .addButton:hover {
-  background: #df6d25;
-
-  transform: translateY(-1px);
+  background: #C1440E;
 }
 
-
-/* =========================
-   MESSAGES
-========================= */
 
 .message {
   padding: 45px;
 
   text-align: center;
 
-  background: white;
+  background: #FFFDF9;
 
-  border-radius: 18px;
+  border-radius: 14px;
+  border: 1.5px dashed #E3C9A8;
 
-  color: #777;
+  color: #8a7a64;
 }
 
 .emptyMenu {
@@ -395,81 +387,28 @@
 
   padding: 60px 20px;
 
-  background: white;
+  background: #FFFDF9;
 
-  border-radius: 20px;
+  border-radius: 14px;
 
-  border: 1px dashed #ddd2c8;
+  border: 1.5px dashed #E3C9A8;
 }
 
 .emptyMenu div {
-  font-size: 45px;
+  font-size: 42px;
 }
 
 .emptyMenu h3 {
-  color: #30251f;
+  font-family: 'Baloo 2', sans-serif;
+  color: #2B211A;
 
   margin: 10px 0 5px;
 }
 
 .emptyMenu p {
-  color: #888;
+  color: #8a7a64;
 
   font-size: 13px;
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1100px) {
-
-  .foodGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-@media (max-width: 850px) {
-
-  .page {
-    padding: 25px;
-  }
-
-  .menuHeader {
-    padding: 30px;
-  }
-
-  .headerEmoji {
-    font-size: 70px;
-    margin-right: 10px;
-  }
-
-  .foodGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .menuHeader {
-    padding: 25px;
-
-    text-align: center;
-  }
-
-  .menuHeader h1 {
-    font-size: 30px;
-  }
-
-  .headerEmoji {
-    display: none;
-  }
-
-  .foodGrid {
-    grid-template-columns: 1fr;
-  }
-
-}

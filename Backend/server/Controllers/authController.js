@@ -11,8 +11,6 @@ export async function registerStudent(req,res){
     const {college_name, student_id, name, email, password, phone, role, department, year, staffCode} = req.body;
 
     const photo = req.file ? req.file.filename : null;
-
- 
      
         if(!name || !email ||!password){
             return res.status(400).json({error: "Name, email and password are required"});
@@ -160,3 +158,47 @@ export async function refreshToken(req, res){
         res.status(403).json({error: "Invalid or expired refresh Token."});
         }
 }
+
+
+export async function getAllStudent(req,res){
+    try{
+      const result = await db.query(`
+        select id, name, email, phone, student_id, department, year, photo
+        from users
+        where role='student'
+        order by id desc
+        `);
+
+        res.status(200).json({
+            students: result.rows
+        });
+    }
+    catch(err){
+        res.status(500).json({error: "Failed to fetch students"})
+
+    }
+}
+
+export async function getAllCanteenStaff(req,res) {
+    try{
+        
+        const result = await db.query(`
+            Select id, name, email, phone, photo
+            from users
+            where role='admin'
+            order by id desc`
+        );
+
+        res.status(200).json({
+            staff: result.rows
+        })
+    }
+    catch(err){
+     res.status(500).json({
+       error: "Failed to fetch the canteen staff data"
+    })
+     
+    }
+}
+
+
